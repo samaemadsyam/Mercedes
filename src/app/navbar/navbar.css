@@ -1,0 +1,330 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+.head {
+ 
+  background-color: black; /* أو أي لون الخلفية بتاعك */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.language {
+    display: flex;
+    align-items: center;
+    color: rgb(180, 181, 182);
+        cursor: pointer;
+        font-size: 30px;
+
+}
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 180px;
+  width: 100%;
+  z-index: 1000;
+  background-color: black;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#languageMenu {
+  position: absolute;
+  top: 80px; 
+  left: 20px;
+  z-index: 999;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+
+#languageMenu.active {
+  display: block;
+    color: rgb(0, 0, 0);
+}
+
+.language i {
+    margin-right: 5px;
+    color: rgb(187, 187, 187);
+}
+  .head .language i:hover {
+    color: white;
+    transform: scale(1.1);
+}  
+.logo img {
+    width: 90px;
+    height: auto;
+    justify-self: center;
+    margin-left: 600px;  
+  ;
+}
+.head .search {
+    display: flex;
+    align-items: center;         
+    justify-content: center;    
+    margin-left: 400px;
+    width: 700px;
+  
+}
+
+.head .search input {
+    padding: 1px;
+    text-align: center; 
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    font-size: 14px;
+    
+}
+.head .search button {
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 20px;
+}
+.head .search button i {
+    color: rgb(187, 187, 187);
+}
+.head .search button i:hover {
+    color: white;
+    transform: scale(1.1);
+}
+.head .login {
+    display: flex;
+    align-items: center;
+    color: rgb(180, 181, 182);
+    cursor: pointer;
+     white-space: nowrap;
+    margin-left: 30px;
+     font-size: 20px;
+    
+}
+.head .login span {
+    font-size: 12px;
+
+    color: rgb(180, 181, 182);
+}
+.head .login i {
+    margin-right: 10px;
+    color: rgb(187, 187, 187);
+}
+.head .login i:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.head .list {
+  z-index: 2;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16.1538px 0px;
+gap: 55.38px;
+position: absolute;
+width: 1476.92px;
+height: 52.31px;
+left: 0px;
+top: 133.85px;
+}
+.head .list a {
+    color: rgb(180, 181, 182);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+.head .list a:hover {
+    color: white;
+    transform: scale(1.1);
+}
+.head .list a:active {
+    color: rgb(187, 187, 187);
+}  
+/* إخفاء أيقونة القائمة في الشاشات الكبيرة */
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ✅ MEDIA QUERY */
+/* @media (max-width: 768px) {
+  .head {
+    height:auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .language,
+  .login {
+    position: absolute;
+    top: 10px;
+  }
+
+  .language {
+    right: 70px;
+    font-size: 18px;
+  }
+
+  .login {
+    right: 10px;
+    font-size: 16px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .logo img {
+    margin: 10px auto;
+  }
+
+  .search {
+    width: 90%;
+    margin-top: -40px;
+  }
+
+  .head .list {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 10px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .head .list a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* ✅ لما المستخدم يضغط على المينيو */
+  /* #menu-toggle:checked ~ .list {
+    display: flex;
+  }
+} */
+ @media (max-width: 768px) {
+  :host {
+    height:100px; /* ← قللنا ارتفاع الهيدر */
+  }
+
+  .head {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+    position: relative;
+    background-color: black;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 20px;
+  }
+
+  .language,
+  .login {
+    position: absolute;
+    top: 5px;
+  }
+
+  .language {
+    right: 50px;
+    margin-top: 50px;
+    font-size: 14px;
+  }
+
+  .login {
+    right: 5px;
+    font-size: 12px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .logo img {
+    margin: 0 auto;
+    width: 60px;
+    height: auto;
+  }
+
+  .search {
+    width: 90%;
+    margin-top: 5px;
+    margin-right: -10px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  .head .search input {
+    font-size: 11px;
+    padding: 1px;
+  }
+
+  .head .search button {
+    font-size: 14px;
+    padding: 2px;
+  }
+
+  .head .list {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    gap: 8px;
+    position: relative;
+  }
+
+  .head .list a {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  #menu-toggle:checked ~ .list {
+    display: flex;
+  }
+}
+

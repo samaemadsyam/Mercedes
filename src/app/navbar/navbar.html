@@ -1,0 +1,43 @@
+ <header class="head">
+<div class="language">
+  <i class="fa-solid fa-globe" (click)="toggleLanguageMenu()"></i>
+<!-- القائمة مش بتظهر إلا لما isMenuOpen = true -->
+<select *ngIf="isMenuOpen" id="languageMenu">
+  <option  value="ar">{{E}}</option><!--interpolation -->
+  <option value="en">{{A}}</option>
+  <option value="fr">{{F}}</option>
+  <option value="de">{{D}}</option>
+
+</select>
+</div>
+
+
+        <div class="logo">
+           <a href="/face"> <img [src]="imgUrl" alt="Amazon Logo"></a><!--property binding--->
+        </div>
+        <div class="search">
+            <input [(ngModel)]="SearchText" placeholder="Search |" ><!--two-way binding -->
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div class="login">
+          <a *ngIf="!auth.isAuthenticated()" href="/login"><i class="fa-solid fa-user"><span>LogIn</span></i></a>  
+        <a *ngIf="auth.isAuthenticated()" href=""><i class="fa-solid fa-user" (click)="logout()" ><span>LogOut</span></i></a>  
+
+        </div>
+        <input type="checkbox" id="menu-toggle" hidden>
+<label for="menu-toggle" class="menu-icon">
+  <i class="fa-solid fa-list"></i>
+</label>
+
+<div class="list">
+<a *ngIf="auth.isAuthenticated()"  (click)="cliced()" href="##">Art & Culture</a>
+  <a  href="/Product">Product</a>
+  <a *ngIf="auth.isAuthenticated()"  href="#">Design</a>
+  <a *ngIf="auth.isAuthenticated()"  href="#">Innovation</a>
+  <a *ngIf="auth.isAuthenticated()"  href="#">Exclusive</a>
+  <a *ngIf="auth.isAuthenticated()"  href="#">Vehicles</a>
+</div>
+
+    </header>

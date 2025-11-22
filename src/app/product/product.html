@@ -1,0 +1,22 @@
+<div class="container py-5">
+    <div class="container">
+        <div class="content">
+            <h1>Mercedes</h1>
+        </div>
+        <div class="image">
+            <img [src]="imgUrl" alt="Mercedes Image">
+        </div>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let p of products">
+        <div class="card h-100">
+            <img [src]="p.imgurl" class="card-img-top fixed-img" alt="product">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.title }}</h5>
+                <p class="text-success fw-bold">{{ p.price }}</p>
+                <a href="#" class="btn btn-primary">See More</a>
+            </div>
+        </div>
+    </div>
+</div>
